@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Nuka-Cola Corporation</title>
+    <meta charset="utf-8">
+    <meta name="description" content="...">
+    <style>
+        .login-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+   <center><h1 style="color: red;"> Nuka-Cola Corporation, Secteur Envois </h1>
+    <hr>
+   <div class="auth-container">
+    <h2>Connexion</h2>
+    <form id="authForm">
+        <input type="text" placeholder="Nom d'utilisateur" required>
+        <input type="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+        <div class="error" id="errorMsg"></div>
+    </form>
+</div>
+</center>
+<script>
+    document.getElementById('authForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = event.target[0].value;
+        const password = event.target[1].value;
+
+        // Logique de validation
+        if (username === 'CE-3' && password === 'NKC-ce-10') {
+            window.location.href = "index.html";
+        } else {
+            document.getElementById('errorMsg').innerText = 'Nom d\'utilisateur ou mot de passe incorrect.';
+        }
+    });
+</script>
+
+</body>
